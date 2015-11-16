@@ -18,7 +18,7 @@ mal_TEST_OPTS = --start-timeout 60 --test-timeout 120
 
 IMPLS = awk bash c clojure coffee cpp crystal cs erlang elixir es6 factor forth fsharp go groovy \
 	guile haskell java julia js kotlin lua make mal ocaml matlab miniMAL nim \
-	perl php ps python r racket rpython ruby rust scala swift tcl vb vimscript
+	perl php ps python r racket rpython ruby rust rust2 scala swift tcl vb vimscript
 
 step0 = step0_repl
 step1 = step1_read_print
@@ -99,6 +99,7 @@ racket_STEP_TO_PROG =  racket/$($(1)).rkt
 rpython_STEP_TO_PROG = rpython/$($(1))
 ruby_STEP_TO_PROG =    ruby/$($(1)).rb
 rust_STEP_TO_PROG =    rust/target/release/$($(1))
+rust2_STEP_TO_PROG =   rust2/target/release/$($(1))
 scala_STEP_TO_PROG =   scala/$($(1)).scala
 swift_STEP_TO_PROG =   swift/$($(1))
 tcl_STEP_TO_PROG =     tcl/$($(1)).tcl
@@ -150,6 +151,7 @@ racket_RUNSTEP =  ../$(2) $(3)
 rpython_RUNSTEP = ../$(2) $(3)
 ruby_RUNSTEP =    ruby ../$(2) $(3)
 rust_RUNSTEP =    ../$(2) $(3)
+rust2_RUNSTEP =   ../$(2) $(3)
 scala_RUNSTEP =   sbt 'run-main $($(1))$(if $(3), $(3),)'
 swift_RUNSTEP =   ../$(2) $(3)
 tcl_RUNSTEP =     tclsh ../$(2) --raw $(3)
