@@ -6,6 +6,6 @@ authors = [ "Your name <you@example.com>" ]
 
 [dependencies]
 time = "0.1"
-regex = "0.1"
 libc = "0.1"
 num = "*"
+regex = "0.1.8"
